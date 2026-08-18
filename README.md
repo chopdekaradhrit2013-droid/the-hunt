@@ -1,93 +1,76 @@
 # THE HUNT
 **Pixel Survival Game** — Phaser 3 · Browser · Mobile + PC
 
-## Project Structure
+> Optimized for iPad / browser development (Codespaces + github.dev).
+
+## Quick Start on iPad
+
+1. Open this repository: https://github.com/chopdekaradhrit2013-droid/the-hunt
+2. Press the **`.`** (period) key to open **github.dev** editor, or create a Codespace.
+3. Create the asset folders:
+   - `assets/characters`
+   - `assets/maps`
+   - `assets/props`
+   - `assets/tiles`
+   - `assets/ui`
+4. Upload your original images into the correct folders using the **exact names** listed below.
+5. In the Codespaces / github.dev terminal run:
+   ```bash
+   npx serve .
+   ```
+6. Open the preview URL. The game runs immediately.
+
+## Deploy to Vercel (easiest permanent link)
+
+1. Go to vercel.com → New Project → Import this repo.
+2. Framework: Other
+3. Deploy. You get a permanent public URL.
+
+## Exact Asset File Names
 
 ```
-the-hunt/
-─── index.html
-─── css/
-│   └── styles.css
-─── js/
-│   ─── config.js          ← Asset manifest + game constants
-│   ─── main.js
-│   ─── entities/
-│   │   ─── Runner.js
-│   │   └── Killer.js
-│   ─── scenes/
-│   │   ─── BootScene.js
-│   │   ─── PreloadScene.js
-│   │   ─── LoginScene.js
-│   │   ─── FaceUploadScene.js
-│   │   ─── RoleScene.js
-│   │   ─── GameScene.js
-│   │   └── ResultScene.js
-│   └── utils/
-│       └── helpers.js
-└── assets/
-    ─── characters/
-    │   ─── killer.jpg              ← hunter_hooded_cutout.jpg
-    │   ─── runner_idle.jpg         ← survival_character_cutout.jpg
-    │   ─── runner_scared.jpg       ← runner_hunting_cutout.jpg
-    │   └── runner_sheet.jpg        ← runner_spritesheet.jpg
-    ─── maps/
-    │   ─── forest_day.jpg          ← 775783437_..._n.jpg
-    │   ─── forest_night.jpg        ← 779742444_..._n.jpg
-    │   ─── island.jpg              ← 776351511_..._n.jpg
-    │   └── town.jpg                ← 774595004_..._n.jpg
-    ─── props/
-    │   ─── boat.jpg                ← escape_boat.jpg
-    │   ─── cabins.jpg              ← cabin_pack.jpg
-    │   ─── chest.jpg               ← treasure_chest.jpg
-    │   └── footprints.jpg
-    ─── tiles/
-    │   ─── bushes.jpg              ← bush_tileset.jpg
-    │   └── trees.jpg               ← tree_tileset.jpg
-    └── ui/
-        ─── avatars.jpg             ← avatar_template.jpg
-        ─── defeat.jpg
-        ─── loading.jpg
-        ─── login_bg.jpg
-        ─── logo.jpg                ← the_hunt_logo.jpg
-        └── victory.jpg
+assets/
+├── characters/
+│   ├── killer.jpg                 ← hunter_hooded_cutout.jpg
+│   ├── runner_idle.jpg            ← survival_character_cutout.jpg
+│   ├── runner_scared.jpg          ← runner_hunting_cutout.jpg
+│   └── runner_sheet.jpg           ← runner_spritesheet.jpg
+├── maps/
+│   ├── forest_day.jpg
+│   ├── forest_night.jpg
+│   ├── island.jpg
+│   └── town.jpg
+├── props/
+│   ├── boat.jpg                   ← escape_boat.jpg
+│   ├── cabins.jpg                 ← cabin_pack.jpg
+│   ├── chest.jpg                  ← treasure_chest.jpg
+│   └── footprints.jpg
+├── tiles/
+│   ├── bushes.jpg                 ← bush_tileset.jpg
+│   └── trees.jpg                  ← tree_tileset.jpg
+└── ui/
+    ├── avatars.jpg                ← avatar_template.jpg
+    ├── defeat.jpg
+    ├── loading.jpg
+    ├── login_bg.jpg
+    ├── logo.jpg                   ← the_hunt_logo.jpg
+    └── victory.jpg
 ```
-
-## How to Run
-
-1. Place **all** your original image files into the folders above using the exact filenames listed.
-2. Open a terminal in the `the-hunt` folder.
-3. Serve with any static server (required for local assets):
-
-```bash
-# Python
-python3 -m http.server 8080
-
-# or Node
-npx serve .
-```
-
-4. Open `http://localhost:8080` in your browser (Chrome / Safari / Firefox).
-
-## Controls
-
-| Action          | Desktop              | Mobile                  |
-|-----------------|----------------------|-------------------------|
-| Move            | WASD / Arrow Keys    | Left virtual joystick   |
-| Hide in bush    | Stand near bush      | Stand near bush         |
-| Sprint          | Hold Shift           | Push joystick fully     |
 
 ## Game Flow
 
-Login → Face Upload (optional) → Random Role (Survivor / Hunter) + Random Map → Match → Victory / Defeat
+Login Screen → Face Upload → Random Role Assignment (Survivor or Hunter) + Random Map → Match → Victory / Defeat
 
-## Notes
+## Features
 
-- All assets are referenced **only** through `js/config.js`. Never hardcode paths elsewhere.
-- Pixel-perfect rendering is enabled (`pixelArt: true` + `roundPixels`).
-- Camera follows the player.
-- Killer uses simple AI (patrol → chase → search).
-- Bushes reduce detection radius when the Survivor is close.
-- Escape by reaching the boat or surviving the full timer as Survivor.
-- Catch the Survivor as Hunter.
+- Full Phaser 3 preloader
+- Pixel-perfect rendering
+- Camera follow
+- Bush hiding (reduces detection)
+- Killer AI (patrol → chase → search)
+- Survival timer
+- Mobile virtual joystick + WASD/Arrow keys
+- Collision detection
+- Responsive UI
 
-Built for cross-platform browser play (iPad, Android, desktop).
+All assets are referenced only through `js/config.js`.
