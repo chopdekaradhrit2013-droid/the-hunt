@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>THE HUNT</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Phaser 3 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <!-- Face upload overlay (HTML layer for file input) -->
+  <div id="face-upload-overlay" class="overlay hidden">
+    <div class="upload-panel">
+      <h2>UPLOAD YOUR FACE</h2>
+      <p>Customize your survivor look</p>
+      <div class="avatar-preview" id="avatar-preview">
+        <img id="preview-img" src="assets/ui/avatars.jpg" alt="Avatar" />
+      </div>
+      <input type="file" id="face-input" accept="image/*" capture="user" />
+      <label for="face-input" class="btn primary">Choose Photo</label>
+      <button id="skip-face" class="btn secondary">Skip</button>
+      <button id="confirm-face" class="btn primary hidden">Confirm</button>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/entities/Runner.js"></script>
+  <script src="js/entities/Killer.js"></script>
+  <script src="js/scenes/BootScene.js"></script>
+  <script src="js/scenes/PreloadScene.js"></script>
+  <script src="js/scenes/LoginScene.js"></script>
+  <script src="js/scenes/FaceUploadScene.js"></script>
+  <script src="js/scenes/RoleScene.js"></script>
+  <script src="js/scenes/GameScene.js"></script>
+  <script src="js/scenes/ResultScene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
